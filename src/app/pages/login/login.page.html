@@ -1,0 +1,71 @@
+<!-- 
+   Authors : initappz (Rahul Jograna)
+  Website : https://initappz.com/
+  App Name : ionic 5 groceryee app
+  Created : 10-Sep-2020
+  This App Template Source code is licensed as per the
+  terms found in the Website https://initappz.com/license
+  Copyright and Good Faith Purchasers © 2020-present initappz.
+ -->
+<ion-content>
+  <div class="main_content_div">
+    <div class="iconDiv">
+      <img src="assets/imgs/icon.png" alt="" class="icon" />
+    </div>
+    <div class="form_div" *ngIf="!showOtp">
+      <ion-input
+        type="number"
+        [placeholder]="util.getString('Mobile')"
+        [(ngModel)]="mobile"
+      >
+        <ion-icon name="call" slot="icon-only"></ion-icon>
+      </ion-input>
+
+      <ion-button expand="block" (click)="sendOtp(false)" [disabled]="loggedIn">
+        <span *ngIf="!loggedIn"> {{util.getString('Next')}} </span>
+        <ion-spinner name="circular" *ngIf="loggedIn"></ion-spinner>
+      </ion-button>
+
+      <!-- <ion-button expand="block" [disabled]="loggedIn" (click)="login()">
+        <span *ngIf="!loggedIn"> {{util.getString('SIGN IN')}} </span>
+        <ion-spinner name="circular" *ngIf="loggedIn"></ion-spinner>
+      </ion-button>-->
+
+      <ion-label class="lbl" (click)="create()">
+        {{util.getString("Don't have an account ?")}}
+        <span class="signup_span"> {{util.getString('Sign Up')}} </span>
+      </ion-label>
+    </div>
+    <div class="form_div_otp" *ngIf="showOtp">
+      <ion-label class="main_head">
+        {{util.getString('Verify OTP')}}
+      </ion-label>
+      <ion-label class="lbl_police">
+        <span class="span_term">
+          {{util.getString('We have sent you one time password to your mobile
+          number')}}
+        </span>
+      </ion-label>
+      <ion-input
+        type="number"
+        [placeholder]="util.getString('Enter Otp')"
+        [(ngModel)]="otp_value"
+      >
+        <ion-icon name="call" slot="icon-only"></ion-icon>
+      </ion-input>
+
+      <ion-button expand="block" (click)="verifyOtp()" [disabled]="loggedIn">
+        <span *ngIf="!loggedIn"> {{util.getString('Verify otp')}} </span>
+        <ion-spinner name="circular" *ngIf="loggedIn"></ion-spinner>
+      </ion-button>
+      <ion-label class="lbl" (click)="sendOtp(true)">
+        {{util.getString('Did not get otp ?')}}
+        <span class="signup_span"> {{util.getString('Resend Otp')}} </span>
+      </ion-label>
+      <ion-label class="lbl" (click)="create()">
+        {{util.getString("Don't have an account ?")}}
+        <span class="signup_span"> {{util.getString('Sign Up')}} </span>
+      </ion-label>
+    </div>
+  </div>
+</ion-content>
