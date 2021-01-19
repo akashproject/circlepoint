@@ -14,21 +14,6 @@
     </div>
     <div class="form_div" *ngIf="!showOtp">
       <ion-label class="main_head"> {{util.getString('Sign Up')}} </ion-label>
-
-      <ion-input
-        [placeholder]="util.getString('Select your Country')"
-        type="text"
-        (ionChange)="onCountryInput($event)"
-        [(ngModel)]="cc"
-      >
-      </ion-input>
-      <div
-        *ngFor="let item of countries"
-        class="cCode"
-        (click)="selectedCC(item)"
-      >
-        <p class="ccLbl">+{{item.dialling_code}} {{item.country_name}}</p>
-      </div>
       <ion-input
         type="number"
         [placeholder]="util.getString('Mobile')"

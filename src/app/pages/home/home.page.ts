@@ -47,6 +47,7 @@ export class HomePage implements OnInit {
   topProducts: any[] = [];
 
   products: any[] = [];
+  productsRecordStatus = true;
   dummyProducts: any[] = [];
 
   haveStores: boolean;
@@ -666,6 +667,8 @@ export class HomePage implements OnInit {
           this.util.hide();
           if (data && data.status === 200 && data.data) {
             this.products = data.data;
+          } else {
+            this.productsRecordStatus = false;
           }
         },
         (error) => {

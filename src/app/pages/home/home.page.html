@@ -56,6 +56,11 @@
       <ion-icon name="arrow-redo-outline" slot="end"></ion-icon>
     </ion-item>
   </div>
+  <div class="searchList" *ngIf="!productsRecordStatus">
+    <ion-item>
+      <ion-label> No record found </ion-label>
+    </ion-item>
+  </div>
   <div class="main_content_div" *ngIf="haveStores === true">
     <div class="cateLbl">
       <ion-label class="all"> {{util.getString('All Categories')}} </ion-label>

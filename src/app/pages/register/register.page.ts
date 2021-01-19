@@ -28,7 +28,7 @@ export class RegisterPage implements OnInit {
   loggedIn: boolean;
   check: boolean;
   cc: any = "";
-  ccCode: any = "";
+  ccCode: any = "91";
   countries: any[] = [];
   showOtp = false;
   otp_value: any = "";
@@ -60,7 +60,7 @@ export class RegisterPage implements OnInit {
   }
 
   sendOtp(resend) {
-    if (!this.mobile || this.ccCode === "" || !this.ccCode) {
+    if (!this.mobile) {
       this.util.showToast(
         this.util.getString("All Fields are required"),
         "dark",
@@ -70,7 +70,7 @@ export class RegisterPage implements OnInit {
     }
 
     const param = {
-      mobile: "+" + this.ccCode + this.mobile,
+      mobile: "+91" + this.mobile,
     };
     if (!resend) {
       this.showOtp = true;
@@ -81,7 +81,6 @@ export class RegisterPage implements OnInit {
         if (data && data.status === 200) {
           this.showOtp = true;
           this.hidden_otp_value = data.data.otp_value;
-          console.log(data);
         } else if (data && data.status === 500) {
           this.util.errorToast(data.data.message);
         } else {
@@ -125,7 +124,7 @@ export class RegisterPage implements OnInit {
       lat: "",
       lng: "",
       cover: "NA",
-      ccCode: "+" + this.ccCode,
+      ccCode: "+91",
       mobile: this.mobile,
       status: this.util.twillo === "1" ? 0 : 1,
       verified: 0,
