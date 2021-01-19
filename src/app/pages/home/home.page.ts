@@ -591,6 +591,8 @@ export class HomePage implements OnInit {
   }
 
   onSearchChange(event) {
+    console.log("here", event);
+
     if (event.detail.value) {
     } else {
       this.products = [];
@@ -654,7 +656,7 @@ export class HomePage implements OnInit {
   }
 
   search(event: string) {
-    console.log(event);
+    console.log("hi", event);
     if (event && event !== "") {
       const param = {
         id: localStorage.getItem("city"),
