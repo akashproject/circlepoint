@@ -49,7 +49,10 @@
     "cordova.plugins.diagnostic": {
       "PACKAGE_NAME": "io.circlepoint.groceryee"
     },
-    "onesignal-cordova-plugin": {
+    "cordova-plugin-androidx": {
+      "PACKAGE_NAME": "io.circlepoint.groceryee"
+    },
+    "cordova-plugin-androidx-adapter": {
       "PACKAGE_NAME": "io.circlepoint.groceryee"
     }
   },

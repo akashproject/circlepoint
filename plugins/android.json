@@ -53,7 +53,7 @@
       "ANDROIDX_VERSION": "1.+",
       "PACKAGE_NAME": "io.circlepoint.groceryee"
     },
-    "onesignal-cordova-plugin": {
+    "cordova-plugin-androidx-adapter": {
       "PACKAGE_NAME": "io.circlepoint.groceryee"
     }
   },

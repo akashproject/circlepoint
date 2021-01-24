@@ -459,14 +459,6 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
       "merges": [
         "cordova.plugins.diagnostic.external_storage"
       ]
-    },
-    {
-      "id": "onesignal-cordova-plugin.OneSignal",
-      "file": "plugins/onesignal-cordova-plugin/www/OneSignal.js",
-      "pluginId": "onesignal-cordova-plugin",
-      "clobbers": [
-        "OneSignal"
-      ]
     }
   ];
   module.exports.metadata = {
@@ -485,6 +477,6 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
     "cordova-plugin-whitelist": "1.3.4",
     "cordova-sqlite-storage": "5.0.1",
     "cordova.plugins.diagnostic": "6.0.2",
-    "onesignal-cordova-plugin": "2.11.1"
+    "cordova-plugin-androidx-adapter": "1.1.3"
   };
 });

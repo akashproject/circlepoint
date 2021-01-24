@@ -391,14 +391,6 @@ module.exports = [
         "clobbers": [
             "SQLitePlugin"
         ]
-    },
-    {
-        "file": "plugins/onesignal-cordova-plugin/www/OneSignal.js",
-        "id": "onesignal-cordova-plugin.OneSignal",
-        "pluginId": "onesignal-cordova-plugin",
-        "clobbers": [
-            "OneSignal"
-        ]
     }
 ];
 module.exports.metadata = 
@@ -419,7 +411,8 @@ module.exports.metadata =
     "cordova-plugin-whitelist": "1.3.4",
     "cordova-sqlite-storage": "5.0.1",
     "cordova.plugins.diagnostic": "6.0.2",
-    "onesignal-cordova-plugin": "2.11.1"
+    "cordova-plugin-androidx": "3.0.0",
+    "cordova-plugin-androidx-adapter": "1.1.3"
 }
 // BOTTOM OF METADATA
 });

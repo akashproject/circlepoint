@@ -278,13 +278,6 @@ const routes: Routes = [
         (m) => m.DirectionPageModule
       ),
   },
-  {
-    path: "verify-otp",
-    loadChildren: () =>
-      import("./pages/verify-otp/verify-otp.module").then(
-        (m) => m.VerifyOtpPageModule
-      ),
-  },
 ];
 @NgModule({
   imports: [
