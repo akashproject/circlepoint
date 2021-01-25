@@ -281,18 +281,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.api = api;
         this.util = util;
         this.route = route;
-        this.address = '';
-        this.house = '';
-        this.landmark = '';
-        this.title = 'home';
-        this.pincode = '';
+        this.address = "";
+        this.house = "";
+        this.landmark = "";
+        this.title = "home";
+        this.pincode = "";
         this.route.queryParams.subscribe(function (data) {
           console.log(data);
 
           if (data && data.from) {
-            _this.from = 'edit';
+            _this.from = "edit";
             var info = JSON.parse(data.data);
-            console.log('da===>', info);
+            console.log("da===>", info);
             _this.address = info.address;
             _this.house = info.house;
             _this.id = info.id;
@@ -301,7 +301,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             _this.lng = info.lng;
             _this.pincode = info.pincode;
           } else {
-            _this.from = 'new';
+            _this.from = "new";
           }
         });
       }
@@ -314,28 +314,29 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function addAddress() {
           var _this2 = this;
 
-          if (this.address === '' || this.landmark === '' || this.house === '' || this.pincode === '') {
-            this.util.errorToast(this.util.getString('All Fields are required'));
+          if (this.address === "" || this.landmark === "" || this.house === "" || this.pincode === "") {
+            this.util.errorToast(this.util.getString("All Fields are required"));
             return false;
           }
 
-          if (!this.lat || this.lat === '' || !this.lng || this.lng === '') {
+          if (!this.lat || this.lat === "" || !this.lng || this.lng === "") {
             var geocoder = new google.maps.Geocoder();
             geocoder.geocode({
-              address: this.house + ' ' + this.landmark + ' ' + this.address + ' ' + this.pincode
+              address: this.house + " " + this.landmark + " " + this.address + " " + this.pincode
             }, function (results, status) {
+              console.log("akash");
               console.log(results, status);
 
-              if (status === 'OK' && results && results.length) {
+              if (status === "OK" && results && results.length) {
                 _this2.lat = results[0].geometry.location.lat();
                 _this2.lng = results[0].geometry.location.lng();
-                console.log('----->', _this2.lat, _this2.lng);
-                console.log('call api');
+                console.log("----->", _this2.lat, _this2.lng);
+                console.log("call api");
 
                 _this2.util.show();
 
                 var param = {
-                  uid: localStorage.getItem('uid'),
+                  uid: localStorage.getItem("uid"),
                   address: _this2.address,
                   lat: _this2.lat,
                   lng: _this2.lng,
@@ -345,7 +346,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                   pincode: _this2.pincode
                 };
 
-                _this2.api.post('address/save', param).subscribe(function (data) {
+                _this2.api.post("address/save", param).subscribe(function (data) {
                   _this2.util.hide();
 
                   if (data && data.status === 200) {
@@ -353,19 +354,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
                     _this2.navCtrl.back();
 
-                    _this2.util.showToast('Address added', 'success', 'bottom');
+                    _this2.util.showToast("Address added", "success", "bottom");
                   } else {
-                    _this2.util.errorToast(_this2.util.getString('Something went wrong'));
+                    _this2.util.errorToast(_this2.util.getString("Something went wrong"));
                   }
                 }, function (error) {
                   console.log(error);
 
                   _this2.util.hide();
 
-                  _this2.util.errorToast(_this2.util.getString('Something went wrong'));
+                  _this2.util.errorToast(_this2.util.getString("Something went wrong"));
                 });
               } else {
-                _this2.util.errorToast(_this2.util.getString('Something went wrong'));
+                _this2.util.errorToast(_this2.util.getString("Something went wrong"));
 
                 return false;
               }
@@ -377,25 +378,25 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function updateAddress() {
           var _this3 = this;
 
-          if (this.address === '' || this.landmark === '' || this.house === '' || this.pincode === '') {
-            this.util.errorToast(this.util.getString('All Fields are required'));
+          if (this.address === "" || this.landmark === "" || this.house === "" || this.pincode === "") {
+            this.util.errorToast(this.util.getString("All Fields are required"));
             return false;
           }
 
-          if (!this.lat || this.lat === '' || !this.lng || this.lng === '') {
+          if (!this.lat || this.lat === "" || !this.lng || this.lng === "") {
             var geocoder = new google.maps.Geocoder();
             geocoder.geocode({
-              address: this.house + ' ' + this.landmark + ' ' + this.address + ' ' + this.pincode
+              address: this.house + " " + this.landmark + " " + this.address + " " + this.pincode
             }, function (results, status) {
               console.log(results, status);
 
-              if (status === 'OK' && results && results.length) {
+              if (status === "OK" && results && results.length) {
                 _this3.lat = results[0].geometry.location.lat();
                 _this3.lng = results[0].geometry.location.lng();
-                console.log('----->', _this3.lat, _this3.lng);
+                console.log("----->", _this3.lat, _this3.lng);
                 var param = {
                   id: _this3.id,
-                  uid: localStorage.getItem('uid'),
+                  uid: localStorage.getItem("uid"),
                   address: _this3.address,
                   lat: _this3.lat,
                   lng: _this3.lng,
@@ -407,7 +408,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
                 _this3.util.show();
 
-                _this3.api.post('address/editList', param).subscribe(function (data) {
+                _this3.api.post("address/editList", param).subscribe(function (data) {
                   _this3.util.hide();
 
                   if (data && data.status === 200) {
@@ -415,19 +416,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
                     _this3.navCtrl.back();
 
-                    _this3.util.showToast('Address updated', 'success', 'bottom');
+                    _this3.util.showToast("Address updated", "success", "bottom");
                   } else {
-                    _this3.util.errorToast(_this3.util.getString('Something went wrong'));
+                    _this3.util.errorToast(_this3.util.getString("Something went wrong"));
                   }
                 }, function (error) {
                   console.log(error);
 
                   _this3.util.hide();
 
-                  _this3.util.errorToast(_this3.util.getString('Something went wrong'));
+                  _this3.util.errorToast(_this3.util.getString("Something went wrong"));
                 });
               } else {
-                _this3.util.errorToast(_this3.util.getString('Something went wrong'));
+                _this3.util.errorToast(_this3.util.getString("Something went wrong"));
 
                 return false;
               }
@@ -458,11 +459,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }];
     };
 
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])('map', {
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])("map", {
       "static": true
     }), Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"])], AddAddressPage.prototype, "mapEle", void 0);
     AddAddressPage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-      selector: 'app-add-address',
+      selector: "app-add-address",
       template: Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(
       /*! raw-loader!./add-address.page.html */
       "./node_modules/raw-loader/dist/cjs.js!./src/app/pages/add-address/add-address.page.html"))["default"],

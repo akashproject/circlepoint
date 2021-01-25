@@ -7,6 +7,23 @@
   terms found in the Website https://initappz.com/license
   Copyright and Good Faith Purchasers © 2020-present initappz.
  -->
+<ion-header class="ion-no-border" *ngIf="!util.appClosed">
+  <ion-toolbar color="primary">
+    <ion-title color="light" (click)="changeCity()" class="ion-text-left">
+      <div class="ion-activatable" *ngIf="util && util.city && util.city.name">
+        <ion-icon slot="start" name="location"></ion-icon>
+        {{ util.city.name }}
+        <ion-ripple-effect type="bounded"></ion-ripple-effect>
+      </div>
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="openMenu()">
+        <img class="menuIcon" src="assets/sidemenu/menu_light.png" alt="" />
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
 <ion-content>
   <div class="main_content_div">
     <div class="iconDiv">

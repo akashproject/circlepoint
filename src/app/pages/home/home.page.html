@@ -131,8 +131,8 @@
               [ngStyle]="{'background-image':'url('+backgroundImage+')'}"
               (click)="openLink(item)"
             >
-              <div class="overlay_div" *ngIf="item.message">
-                <ion-label> Upload Photo </ion-label>
+              <div class="overlay_div" *ngIf="!uploadStatus">
+                <ion-label class="overlay_inner"> + </ion-label>
               </div>
             </div>
           </div>

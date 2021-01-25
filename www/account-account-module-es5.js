@@ -21,7 +21,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<!-- \n   Authors : initappz (Rahul Jograna)\n  Website : https://initappz.com/\n  App Name : ionic 5 groceryee app\n  Created : 10-Sep-2020\n  This App Template Source code is licensed as per the\n  terms found in the Website https://initappz.com/license\n  Copyright and Good Faith Purchasers © 2020-present initappz.\n -->\n<ion-header class=\"ion-no-border\" *ngIf=\"!util.appClosed\">\n  <ion-toolbar color=\"primary\">\n    <ion-buttons slot=\"end\">\n      <ion-button (click)=\"openMenu()\">\n        <img class=\"menuIcon\" src=\"assets/sidemenu/menu_light.png\" alt=\"\">\n      </ion-button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n\n<app-closed *ngIf=\"util.appClosed\"></app-closed>\n\n<ion-content *ngIf=\"!util.appClosed\">\n  <div class=\"main_div\">\n    <ion-row>\n      <ion-col size=\"4\">\n        <div class=\"user_img\" [ngStyle]=\"{'background-image':'url('+getProfile()+'),url(assets/bg.png)'}\">\n        </div>\n      </ion-col>\n      <ion-col size=\"8\">\n        <p class=\"username\">{{getName()}}</p>\n        <p class=\"email\">{{getEmail()}}</p>\n        <ion-button (click)=\"editProfile()\" shape=\"round\" size=\"small\" color=\"light\"> {{util.getString('Edit Profile')}}\n        </ion-button>\n      </ion-col>\n    </ion-row>\n  </div>\n\n  <div class=\"options\">\n    <ion-item lines=\"none\" detail=\"\" class=\"ion-activatable ripple-parent\" (click)=\"orders()\">\n      <ion-icon name=\"calendar-outline\" slot=\"start\"></ion-icon>\n      <ion-label>{{util.getString('Orders')}} </ion-label>\n      <ion-ripple-effect type=\"unbounded\"></ion-ripple-effect>\n    </ion-item>\n\n    <ion-item lines=\"none\" detail=\"\" class=\"ion-activatable ripple-parent\" (click)=\"goToFav()\">\n      <ion-icon name=\"heart-outline\" slot=\"start\"></ion-icon>\n      <ion-label> {{util.getString('Favourite')}} </ion-label>\n      <ion-ripple-effect type=\"unbounded\"></ion-ripple-effect>\n    </ion-item>\n\n    <ion-item lines=\"none\" detail=\"\" class=\"ion-activatable ripple-parent\" (click)=\"goToAddress()\">\n      <ion-icon name=\"location-outline\" slot=\"start\"></ion-icon>\n      <ion-label> {{util.getString('Address')}} </ion-label>\n      <ion-ripple-effect type=\"unbounded\"></ion-ripple-effect>\n    </ion-item>\n\n    <ion-item lines=\"none\" detail=\"\" class=\"ion-activatable ripple-parent\" (click)=\"reset()\">\n      <ion-icon name=\"key-outline\" slot=\"start\"></ion-icon>\n      <ion-label>{{util.getString('Change Password')}} </ion-label>\n      <ion-ripple-effect type=\"unbounded\"></ion-ripple-effect>\n    </ion-item>\n\n    <ion-item lines=\"none\" detail=\"\" class=\"ion-activatable ripple-parent\" (click)=\"goToAbout()\">\n      <ion-icon name=\"information-circle-outline\" slot=\"start\"></ion-icon>\n      <ion-label> {{util.getString('About Us')}} </ion-label>\n      <ion-ripple-effect type=\"unbounded\"></ion-ripple-effect>\n    </ion-item>\n\n    <ion-item lines=\"none\" detail=\"\" class=\"ion-activatable ripple-parent\" (click)=\"goToContact()\">\n      <ion-icon name=\"mail-outline\" slot=\"start\"></ion-icon>\n      <ion-label> {{util.getString('Contact Us')}} </ion-label>\n      <ion-ripple-effect type=\"unbounded\"></ion-ripple-effect>\n    </ion-item>\n\n    <ion-item lines=\"none\" detail=\"\" class=\"ion-activatable ripple-parent\" (click)=\"goLangs()\">\n      <ion-icon name=\"language-outline\" slot=\"start\"></ion-icon>\n      <ion-label> {{util.getString('Languages')}} </ion-label>\n      <ion-ripple-effect type=\"unbounded\"></ion-ripple-effect>\n    </ion-item>\n\n    <ion-item lines=\"none\" detail=\"\" class=\"ion-activatable ripple-parent\" (click)=\"goToChats()\">\n      <ion-icon name=\"chatbubbles-outline\" slot=\"start\"></ion-icon>\n      <ion-label> {{util.getString('Chats')}} </ion-label>\n      <ion-ripple-effect type=\"unbounded\"></ion-ripple-effect>\n    </ion-item>\n\n    <ion-item lines=\"none\" detail=\"\" class=\"ion-activatable ripple-parent\" (click)=\"goFaqs()\">\n      <ion-icon name=\"flag-outline\" slot=\"start\"></ion-icon>\n      <ion-label> {{util.getString('FAQs')}} </ion-label>\n      <ion-ripple-effect type=\"unbounded\"></ion-ripple-effect>\n    </ion-item>\n\n    <ion-item lines=\"none\" detail=\"\" class=\"ion-activatable ripple-parent\" (click)=\"goHelp()\">\n      <ion-icon name=\"help-circle-outline\" slot=\"start\"></ion-icon>\n      <ion-label> {{util.getString('Help')}} </ion-label>\n      <ion-ripple-effect type=\"unbounded\"></ion-ripple-effect>\n    </ion-item>\n\n    <ion-item lines=\"none\" detail=\"\" class=\"ion-activatable ripple-parent\" (click)=\"logout()\">\n      <ion-icon name=\"power-outline\" slot=\"start\"></ion-icon>\n      <ion-label> {{util.getString('Log Out')}} </ion-label>\n      <ion-ripple-effect type=\"unbounded\"></ion-ripple-effect>\n    </ion-item>\n  </div>\n</ion-content>";
+    __webpack_exports__["default"] = "<!-- \n   Authors : initappz (Rahul Jograna)\n  Website : https://initappz.com/\n  App Name : ionic 5 groceryee app\n  Created : 10-Sep-2020\n  This App Template Source code is licensed as per the\n  terms found in the Website https://initappz.com/license\n  Copyright and Good Faith Purchasers © 2020-present initappz.\n -->\n<ion-header class=\"ion-no-border\" *ngIf=\"!util.appClosed\">\n  <ion-toolbar color=\"primary\">\n    <ion-buttons slot=\"end\">\n      <ion-button (click)=\"openMenu()\">\n        <img class=\"menuIcon\" src=\"assets/sidemenu/menu_light.png\" alt=\"\" />\n      </ion-button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n\n<app-closed *ngIf=\"util.appClosed\"></app-closed>\n\n<ion-content *ngIf=\"!util.appClosed\">\n  <div class=\"main_div\">\n    <ion-row>\n      <ion-col size=\"4\">\n        <div\n          class=\"user_img\"\n          [ngStyle]=\"{'background-image':'url('+getProfile()+'),url(assets/bg.png)'}\"\n        ></div>\n      </ion-col>\n      <ion-col size=\"8\">\n        <p class=\"username\">{{getName()}}</p>\n        <p class=\"email\">{{getEmail()}}</p>\n        <ion-button\n          (click)=\"editProfile()\"\n          shape=\"round\"\n          size=\"small\"\n          color=\"light\"\n        >\n          {{util.getString('Edit Profile')}}\n        </ion-button>\n      </ion-col>\n    </ion-row>\n  </div>\n\n  <div class=\"options\">\n    <ion-item\n      lines=\"none\"\n      detail=\"\"\n      class=\"ion-activatable ripple-parent\"\n      (click)=\"orders()\"\n    >\n      <ion-icon name=\"calendar-outline\" slot=\"start\"></ion-icon>\n      <ion-label>{{util.getString('Orders')}} </ion-label>\n      <ion-ripple-effect type=\"unbounded\"></ion-ripple-effect>\n    </ion-item>\n\n    <ion-item\n      lines=\"none\"\n      detail=\"\"\n      class=\"ion-activatable ripple-parent\"\n      (click)=\"goToFav()\"\n    >\n      <ion-icon name=\"heart-outline\" slot=\"start\"></ion-icon>\n      <ion-label> {{util.getString('Favourite')}} </ion-label>\n      <ion-ripple-effect type=\"unbounded\"></ion-ripple-effect>\n    </ion-item>\n\n    <ion-item\n      lines=\"none\"\n      detail=\"\"\n      class=\"ion-activatable ripple-parent\"\n      (click)=\"goToAddress()\"\n    >\n      <ion-icon name=\"location-outline\" slot=\"start\"></ion-icon>\n      <ion-label> {{util.getString('Address')}} </ion-label>\n      <ion-ripple-effect type=\"unbounded\"></ion-ripple-effect>\n    </ion-item>\n\n    <ion-item\n      lines=\"none\"\n      detail=\"\"\n      class=\"ion-activatable ripple-parent\"\n      (click)=\"reset()\"\n    >\n      <ion-icon name=\"key-outline\" slot=\"start\"></ion-icon>\n      <ion-label>{{util.getString('Change Password')}} </ion-label>\n      <ion-ripple-effect type=\"unbounded\"></ion-ripple-effect>\n    </ion-item>\n\n    <ion-item\n      lines=\"none\"\n      detail=\"\"\n      class=\"ion-activatable ripple-parent\"\n      (click)=\"goToAbout()\"\n    >\n      <ion-icon name=\"information-circle-outline\" slot=\"start\"></ion-icon>\n      <ion-label> {{util.getString('About Us')}} </ion-label>\n      <ion-ripple-effect type=\"unbounded\"></ion-ripple-effect>\n    </ion-item>\n\n    <ion-item\n      lines=\"none\"\n      detail=\"\"\n      class=\"ion-activatable ripple-parent\"\n      (click)=\"goToContact()\"\n    >\n      <ion-icon name=\"mail-outline\" slot=\"start\"></ion-icon>\n      <ion-label> {{util.getString('Contact Us')}} </ion-label>\n      <ion-ripple-effect type=\"unbounded\"></ion-ripple-effect>\n    </ion-item>\n\n    <ion-item\n      lines=\"none\"\n      detail=\"\"\n      class=\"ion-activatable ripple-parent\"\n      (click)=\"goLangs()\"\n    >\n      <ion-icon name=\"language-outline\" slot=\"start\"></ion-icon>\n      <ion-label> {{util.getString('Languages')}} </ion-label>\n      <ion-ripple-effect type=\"unbounded\"></ion-ripple-effect>\n    </ion-item>\n\n    <ion-item\n      lines=\"none\"\n      detail=\"\"\n      class=\"ion-activatable ripple-parent\"\n      (click)=\"goToChats()\"\n    >\n      <ion-icon name=\"chatbubbles-outline\" slot=\"start\"></ion-icon>\n      <ion-label> {{util.getString('Chats')}} </ion-label>\n      <ion-ripple-effect type=\"unbounded\"></ion-ripple-effect>\n    </ion-item>\n\n    <ion-item\n      lines=\"none\"\n      detail=\"\"\n      class=\"ion-activatable ripple-parent\"\n      (click)=\"goFaqs()\"\n    >\n      <ion-icon name=\"flag-outline\" slot=\"start\"></ion-icon>\n      <ion-label> {{util.getString('FAQs')}} </ion-label>\n      <ion-ripple-effect type=\"unbounded\"></ion-ripple-effect>\n    </ion-item>\n\n    <ion-item\n      lines=\"none\"\n      detail=\"\"\n      class=\"ion-activatable ripple-parent\"\n      (click)=\"goHelp()\"\n    >\n      <ion-icon name=\"help-circle-outline\" slot=\"start\"></ion-icon>\n      <ion-label> {{util.getString('Help')}} </ion-label>\n      <ion-ripple-effect type=\"unbounded\"></ion-ripple-effect>\n    </ion-item>\n\n    <ion-item\n      lines=\"none\"\n      detail=\"\"\n      class=\"ion-activatable ripple-parent\"\n      (click)=\"logout()\"\n    >\n      <ion-icon name=\"power-outline\" slot=\"start\"></ion-icon>\n      <ion-label> {{util.getString('Log Out')}} </ion-label>\n      <ion-ripple-effect type=\"unbounded\"></ion-ripple-effect>\n    </ion-item>\n  </div>\n</ion-content>\n";
     /***/
   },
 
@@ -289,7 +289,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
       _createClass(AccountPage, [{
         key: "ngOnInit",
-        value: function ngOnInit() {}
+        value: function ngOnInit() {
+          console.log("here", localStorage.getItem("uid"));
+        }
       }, {
         key: "openMenu",
         value: function openMenu() {
@@ -298,7 +300,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "ditProfile",
         value: function ditProfile() {
-          this.router.navigate(['/edit-profile']);
+          this.router.navigate(["/edit-profile"]);
         }
       }, {
         key: "logout",
@@ -310,93 +312,93 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.cart.grandTotal = 0;
           this.cart.coupon = null;
           this.cart.discount = null;
-          this.util.clearKeys('cart');
-          this.navCtrl.navigateRoot(['/tabs/home']);
+          this.util.clearKeys("cart");
+          this.navCtrl.navigateRoot(["/tabs/home"]);
         }
       }, {
         key: "orders",
         value: function orders() {
-          this.router.navigate(['/tabs/orders']);
+          this.router.navigate(["/tabs/orders"]);
         }
       }, {
         key: "goToFav",
         value: function goToFav() {
-          this.router.navigate(['/favorite']);
+          this.router.navigate(["/favorite"]);
         }
       }, {
         key: "goToMethods",
         value: function goToMethods() {
-          this.router.navigate(['/payment-method']);
+          this.router.navigate(["/payment-method"]);
         }
       }, {
         key: "goToHistory",
         value: function goToHistory() {
-          this.router.navigate(['/payment-history']);
+          this.router.navigate(["/payment-history"]);
         }
       }, {
         key: "goToAbout",
         value: function goToAbout() {
-          this.router.navigate(['/tabs/account/about']);
+          this.router.navigate(["/tabs/account/about"]);
         }
       }, {
         key: "editProfile",
         value: function editProfile() {
-          this.router.navigate(['/tabs/account/profile']);
+          this.router.navigate(["/tabs/account/profile"]);
         }
       }, {
         key: "getName",
         value: function getName() {
-          return this.util.userInfo && this.util.userInfo.first_name ? this.util.userInfo.first_name + ' ' + this.util.userInfo.last_name : 'Groceryee';
+          return this.util.userInfo && this.util.userInfo.first_name ? this.util.userInfo.first_name + " " + this.util.userInfo.last_name : "Groceryee";
         }
       }, {
         key: "getEmail",
         value: function getEmail() {
-          return this.util.userInfo && this.util.userInfo.email ? this.util.userInfo.email : 'info@groceryee.com';
+          return this.util.userInfo && this.util.userInfo.email ? this.util.userInfo.email : "info@groceryee.com";
         }
       }, {
         key: "getProfile",
         value: function getProfile() {
-          return this.util.userInfo && this.util.userInfo.cover ? this.api.mediaURL + this.util.userInfo.cover : 'assets/imgs/user.png';
+          return this.util.userInfo && this.util.userInfo.cover ? this.api.mediaURL + this.util.userInfo.cover : "assets/imgs/user.png";
         }
       }, {
         key: "goLangs",
         value: function goLangs() {
-          this.router.navigate(['languages']);
+          this.router.navigate(["languages"]);
         }
       }, {
         key: "goToAddress",
         value: function goToAddress() {
           var param = {
             queryParams: {
-              from: 'account'
+              from: "account"
             }
           };
-          this.router.navigate(['address'], param);
+          this.router.navigate(["address"], param);
         }
       }, {
         key: "goToContact",
         value: function goToContact() {
-          this.router.navigate(['tabs/account/contacts']);
+          this.router.navigate(["tabs/account/contacts"]);
         }
       }, {
         key: "reset",
         value: function reset() {
-          this.router.navigate(['reset-password']);
+          this.router.navigate(["reset-password"]);
         }
       }, {
         key: "goToChats",
         value: function goToChats() {
-          this.router.navigate(['chats']);
+          this.router.navigate(["chats"]);
         }
       }, {
         key: "goFaqs",
         value: function goFaqs() {
-          this.router.navigate(['tabs/account/faqs']);
+          this.router.navigate(["tabs/account/faqs"]);
         }
       }, {
         key: "goHelp",
         value: function goHelp() {
-          this.router.navigate(['tabs/account/help']);
+          this.router.navigate(["tabs/account/help"]);
         }
       }]);
 
@@ -418,7 +420,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     };
 
     AccountPage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Component"])({
-      selector: 'app-account',
+      selector: "app-account",
       template: Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(
       /*! raw-loader!./account.page.html */
       "./node_modules/raw-loader/dist/cjs.js!./src/app/pages/account/account.page.html"))["default"],

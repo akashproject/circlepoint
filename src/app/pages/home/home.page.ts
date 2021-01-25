@@ -24,7 +24,7 @@ import { Camera, CameraOptions } from "@ionic-native/camera/ngx";
 })
 export class HomePage implements OnInit {
   slideOpts = {
-    slidesPerView: 1.3,
+    slidesPerView: 1,
   };
   slideTops = {
     slidesPerView: 2,
@@ -56,6 +56,7 @@ export class HomePage implements OnInit {
   stores: any[] = [];
   terms: any;
   backgroundImage = "assets/bg.png";
+  uploadStatus = false;
   allcates: any[] = [];
   constructor(
     public util: UtilService,
@@ -809,6 +810,7 @@ export class HomePage implements OnInit {
         };
         console.log("parma==>", alpha);
         this.backgroundImage = "data:image/png;base64," + url;
+        this.uploadStatus = true;
         this.api
           .nativePost("users/upload_file", alpha)
           .then(

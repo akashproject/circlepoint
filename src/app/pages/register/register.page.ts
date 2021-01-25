@@ -46,7 +46,9 @@ export class RegisterPage implements OnInit {
   }
 
   ngOnInit() {}
-
+  openMenu() {
+    this.util.openMenu();
+  }
   async openModal(userId) {
     const modal = await this.modalCtrl.create({
       component: VerifyPage,

@@ -36,6 +36,9 @@ export class LoginPage implements OnInit {
 
   ngOnInit() {}
 
+  openMenu() {
+    this.util.openMenu();
+  }
   sendOtp(resend) {
     if (!this.mobile) {
       this.util.showToast(
