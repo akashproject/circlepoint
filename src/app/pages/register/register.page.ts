@@ -84,7 +84,7 @@ export class RegisterPage implements OnInit {
           this.showOtp = true;
           this.hidden_otp_value = data.data.otp_value;
         } else if (data && data.status === 500) {
-          this.util.errorToast(data.data.message);
+          this.util.errorToast(data.data.error);
         } else {
           this.util.errorToast(this.util.getString("Something went wrong"));
         }

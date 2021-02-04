@@ -86,6 +86,7 @@
           >{{ (item.name.length>10)? (item.name | slice:0:10)+'..':(item.name)
           }}</ion-label
         >
+        <ion-label></ion-label>
       </div>
 
       <div *ngFor="let item of dummyCates" style="margin: 0px 10px">
@@ -129,10 +130,15 @@
             <div
               class="back_image"
               [ngStyle]="{'background-image':'url('+backgroundImage+')'}"
-              (click)="openLink(item)"
+              (click)="checkloginStatusBeforeUpload(item)"
             >
               <div class="overlay_div" *ngIf="!uploadStatus">
-                <ion-label class="overlay_inner"> + </ion-label>
+                <ion-button color="success" expand="full" shape="round">
+                  <ion-icon slot="start" name="cloud-upload"></ion-icon> Upload
+                </ion-button>
+                <ion-label class="overlay_inner">
+                  Medicine prescription and grocery list
+                </ion-label>
               </div>
             </div>
           </div>
@@ -297,10 +303,7 @@
                 </span>
               </ion-label>
               <div *ngIf="item.size ==='0'">
-                <ion-label
-                  class="price_lbl"
-                  *ngIf="item.discount === '0' && util.cside ==='left'"
-                >
+                <ion-label class="price_lbl">
                   {{util.currecny}} {{item.original_price}}
                 </ion-label>
                 <ion-label
@@ -438,7 +441,7 @@
             <div
               class="back_image"
               [ngStyle]="{'background-image':'url('+api.mediaURL+item.cover+'),url(assets/bg.png)'}"
-              (click)="openLink(item)"
+              (click)="checkloginStatusBeforeUpload(item)"
             >
               <div class="overlay_div" *ngIf="item.message">
                 <ion-label> {{item.message}} </ion-label>
@@ -468,7 +471,7 @@
             <div
               class="back_image"
               [ngStyle]="{'background-image':'url('+api.mediaURL+item.cover+'),url(assets/bg.png)'}"
-              (click)="openLink(item)"
+              (click)="checkloginStatusBeforeUpload(item)"
             >
               <div class="overlay_div" *ngIf="item.message">
                 <ion-label> {{item.message}} </ion-label>

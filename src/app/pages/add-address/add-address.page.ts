@@ -67,12 +67,7 @@ export class AddAddressPage implements OnInit {
   ngOnInit() {}
 
   addAddress() {
-    if (
-      this.address === "" ||
-      this.landmark === "" ||
-      this.house === "" ||
-      this.pincode === ""
-    ) {
+    if (this.address === "") {
       this.util.errorToast(this.util.getString("All Fields are required"));
       return false;
     }
@@ -80,14 +75,7 @@ export class AddAddressPage implements OnInit {
       const geocoder = new google.maps.Geocoder();
       geocoder.geocode(
         {
-          address:
-            this.house +
-            " " +
-            this.landmark +
-            " " +
-            this.address +
-            " " +
-            this.pincode,
+          address: this.address,
         },
         (results, status) => {
           console.log("akash");
@@ -105,9 +93,6 @@ export class AddAddressPage implements OnInit {
               lat: this.lat,
               lng: this.lng,
               title: this.title,
-              house: this.house,
-              landmark: this.landmark,
-              pincode: this.pincode,
             };
             this.api.post("address/save", param).subscribe(
               (data: any) => {

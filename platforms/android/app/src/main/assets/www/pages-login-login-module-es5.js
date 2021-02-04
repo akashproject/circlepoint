@@ -329,7 +329,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             } else if (data && data.status === 500) {
               console.log("500");
 
-              _this.util.errorToast(data.data.message);
+              _this.util.errorToast(data.data.error);
             } else {
               console.log("wrong");
 
@@ -369,6 +369,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               if (data && data.data && data.data.type === "user") {
                 if (data.data.status === "1") {
                   localStorage.setItem("uid", data.data.id);
+                  localStorage.setItem("mobile", data.data.mobile);
+                  localStorage.setItem("first_name", data.data.mobile);
+                  localStorage.setItem("last_name", data.data.mobile);
                   _this2.util.userInfo = data.data;
                   var fcm = localStorage.getItem("fcm");
 

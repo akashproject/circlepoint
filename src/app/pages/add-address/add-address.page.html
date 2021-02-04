@@ -21,26 +21,14 @@
 <ion-content>
   <div class="informations">
     <ion-item>
-      <ion-label position="stacked"> {{util.getString('LOCATIONS')}} </ion-label>
+      <ion-label position="stacked">
+        {{util.getString('LOCATIONS')}}
+      </ion-label>
       <ion-input [(ngModel)]="address"></ion-input>
     </ion-item>
-    <ion-item>
-      <ion-label position="stacked"> {{util.getString('HOUSE / FLAT NO')}} </ion-label>
-      <ion-input [(ngModel)]="house"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label position="stacked"> {{util.getString('LANDMARK')}} </ion-label>
-      <ion-input [(ngModel)]="landmark"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label position="stacked"> {{util.getString('Pincode')}} </ion-label>
-      <ion-input type="number" [(ngModel)]="pincode"></ion-input>
-    </ion-item>
     <ion-radio-group [(ngModel)]="title">
-      <ion-label class="title">
-        {{util.getString('SAVE AS')}}
-      </ion-label>
-      <ion-item style="margin-top: 20px;">
+      <ion-label class="title"> {{util.getString('SAVE AS')}} </ion-label>
+      <ion-item style="margin-top: 20px">
         <ion-icon name="home-outline" slot="start"></ion-icon>
         <ion-label> {{util.getString('HOME')}} </ion-label>
         <ion-radio value="home"></ion-radio>

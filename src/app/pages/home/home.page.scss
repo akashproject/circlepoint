@@ -107,26 +107,11 @@ ion-title {
         position: relative;
 
         .overlay_div {
-          background: #45c261;
-          position: absolute;
-          top: 50%;
-          transform: translateY(-50%);
-          width: 42%;
-          right: 29%;
-          padding: 10px;
-          border-radius: 50%;
-          height: 100%;
-          border: 7px solid #bbb9b9;
+          transform: translateY(43%);
           .overlay_inner {
-            color: white;
-            text-align: right;
-            font-size: 84px;
-            font-family: muli-bold;
-            width: 65%;
-            margin: auto;
-            position: absolute;
-            bottom: 77px;
-            height: 30%;
+            color: #29a929;
+            font-size: 18px;
+            font-weight: 600;
           }
         }
       }

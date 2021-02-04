@@ -197,7 +197,7 @@ let LoginPage = class LoginPage {
             }
             else if (data && data.status === 500) {
                 console.log("500");
-                this.util.errorToast(data.data.message);
+                this.util.errorToast(data.data.error);
             }
             else {
                 console.log("wrong");
@@ -230,6 +230,9 @@ let LoginPage = class LoginPage {
                 if (data && data.data && data.data.type === "user") {
                     if (data.data.status === "1") {
                         localStorage.setItem("uid", data.data.id);
+                        localStorage.setItem("mobile", data.data.mobile);
+                        localStorage.setItem("first_name", data.data.mobile);
+                        localStorage.setItem("last_name", data.data.mobile);
                         this.util.userInfo = data.data;
                         const fcm = localStorage.getItem("fcm");
                         if (fcm && fcm !== null && fcm !== "null") {

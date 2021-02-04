@@ -372,7 +372,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               _this.showOtp = true;
               _this.hidden_otp_value = data.data.otp_value;
             } else if (data && data.status === 500) {
-              _this.util.errorToast(data.data.message);
+              _this.util.errorToast(data.data.error);
             } else {
               _this.util.errorToast(_this.util.getString("Something went wrong"));
             }

@@ -10,13 +10,15 @@
 import { Component, OnInit, ChangeDetectorRef } from "@angular/core";
 import { UtilService } from "../../services/util.service";
 import { Router, NavigationExtras } from "@angular/router";
-import { ApiService } from "src/app/services/api.service";
-import { CartService } from "src/app/services/cart.service";
+import { ApiService } from "../../services/api.service";
+import { CartService } from "../../services/cart.service";
 import * as moment from "moment";
 import { InAppBrowser } from "@ionic-native/in-app-browser/ngx";
 import { AlertController } from "@ionic/angular";
 import { NavController, ActionSheetController } from "@ionic/angular";
 import { Camera, CameraOptions } from "@ionic-native/camera/ngx";
+import { AuthGuard } from "../../guard/auth.guard";
+
 @Component({
   selector: "app-home",
   templateUrl: "./home.page.html",
@@ -55,7 +57,7 @@ export class HomePage implements OnInit {
   dummyStores: any[] = [];
   stores: any[] = [];
   terms: any;
-  backgroundImage = "assets/bg.png";
+  backgroundImage = "";
   uploadStatus = false;
   allcates: any[] = [];
   constructor(
@@ -67,7 +69,8 @@ export class HomePage implements OnInit {
     private iab: InAppBrowser,
     private alertCtrl: AlertController,
     private actionSheetController: ActionSheetController,
-    private camera: Camera
+    private camera: Camera,
+    private authGuard: AuthGuard
   ) {
     this.dummyCates = Array(5);
     this.dummyBanners = Array(5);
@@ -515,9 +518,17 @@ export class HomePage implements OnInit {
     this.router.navigate(["cities"]);
   }
 
-  async openLink(item) {
-    console.log(item);
+  checkloginStatusBeforeUpload(item) {
+    const uid = localStorage.getItem("uid");
+    if (uid && uid != null && uid !== "null") {
+      this.openLink(item);
+    } else {
+      this.router.navigate(["/login"]);
+      return false;
+    }
+  }
 
+  async openLink(item) {
     if (item.type === "0") {
       // Category
       console.log("open category");
@@ -673,6 +684,9 @@ export class HomePage implements OnInit {
           } else {
             this.productsRecordStatus = false;
           }
+          setTimeout(() => {
+            this.productsRecordStatus = true;
+          }, 2000);
         },
         (error) => {
           console.log("error in searhc filess--->>", error);
@@ -786,6 +800,7 @@ export class HomePage implements OnInit {
       }
     );
   }*/
+
   upload(type) {
     try {
       const options: CameraOptions = {
@@ -805,6 +820,7 @@ export class HomePage implements OnInit {
         console.log("url->", url);
         this.util.show("uploading");
         const alpha = {
+          mobile: localStorage.getItem("mobile"),
           img: url,
           type: "jpg",
         };
@@ -812,20 +828,27 @@ export class HomePage implements OnInit {
         this.backgroundImage = "data:image/png;base64," + url;
         this.uploadStatus = true;
         this.api
-          .nativePost("users/upload_file", alpha)
+          .nativePost("users/upload_file_order", alpha)
           .then(
             (data) => {
               this.util.hide();
-              console.log("data", JSON.parse(data.data));
+              // Save to Prescripe
               const info = JSON.parse(data.data);
               this.cover = info.data;
-              console.log("cover image", this.cover);
               const param = {
-                cover: this.cover,
-                id: localStorage.getItem("uid"),
+                name:
+                  localStorage.getItem("first_name") +
+                  " " +
+                  localStorage.getItem("last_name"),
+                phone: localStorage.getItem("mobile"),
+                email: "Nil",
+                image: this.cover,
+                message: "NIL",
+                status: 1,
+                date: new Date().toISOString(),
               };
               this.util.show(this.util.getString("updating..."));
-              this.api.post("users/edit_profile", param).subscribe(
+              this.api.post("prescription/save", param).subscribe(
                 (update: any) => {
                   this.util.hide();
                   console.log(update);

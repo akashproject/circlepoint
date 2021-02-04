@@ -5015,18 +5015,18 @@ __webpack_require__.r(__webpack_exports__);
 // The list of file replacements can be found in `angular.json`.
 const environment = {
     production: false,
-    baseURL: 'https://api.circlepoint.in/index.php/',
-    mediaURL: 'https://circlepoint.in/API/uploads/',
+    baseURL: "https://api.circlepoint.in/index.php/",
+    mediaURL: "https://circlepoint.in/API/uploads/",
     onesignal: {
-        appId: 'd9d6c621-8d9d-4a2f-9098-cfae13036d8b',
-        googleProjectNumber: '888633870378',
-        restKey: 'YmQ4OWYwNTEtZjlkMy00NzhhLTkyY2UtN2MwZWY0YjYyNTFm'
+        appId: "d9d6c621-8d9d-4a2f-9098-cfae13036d8b",
+        googleProjectNumber: "888633870378",
+        restKey: "YmQ4OWYwNTEtZjlkMy00NzhhLTkyY2UtN2MwZWY0YjYyNTFm",
     },
     general: {
-        symbol: '$',
-        code: 'USD'
+        symbol: "$",
+        code: "USD",
     },
-    authToken: '123456789'
+    authToken: "123456789",
 };
 /*
  * For easier debugging in development mode, you can import the following file
